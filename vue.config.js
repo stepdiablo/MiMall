@@ -15,20 +15,22 @@ module.exports = {
     /* webpack-dev-server 相关配置 */
     devServer: {
         /* 自动打开浏览器 */
-        open: true,
+        //open: true,
         /* 设置为0.0.0.0则所有的地址均能访问 */
         host: 'localhost',
         port: 8100,
-        https: false,
-        hotOnly: false,
+        //https: false,
+        //hotOnly: false,  hot 和 hotOnly 的区别是在某些模块不支持热更新的情况下，
+        //前者会自动刷新页面，后者不会刷新页面，而是在控制台输出热更新失败
         /* 使用代理 */
-        //proxy: {
-        //    '/api': {
-        /* 目标代理服务器地址 */
-        //        target: 'http://localhost:8080',
-        /* 允许跨域 */
-        //        changeOrigin: true,
-        //    },
-        //},
+        proxy: {
+            '/api': {
+                target: 'http://mall-pre.springboot.cn',
+                changeOrigin: true,
+                pathRewrite: {
+                    '/api': ''
+                }
+            }
+        }
     },
 }
