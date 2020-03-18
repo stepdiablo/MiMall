@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import router from "./router"
+import store from "./store"
 import axios from 'axios'
 import VueAxios from "vue-axios"
 import VueLazyLoader from "vue-lazyload"
+import VueCookie from "vue-cookie"
 import App from './App.vue'
 import { Message } from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
@@ -39,6 +41,7 @@ axios.interceptors.response.use(function (response) {
 });
 
 Vue.use(VueAxios, axios);
+Vue.use(VueCookie);
 Vue.use(VueLazyLoader, {
   loading: '/imgs/loading-svg/loading-bars.svg'
 })
@@ -46,6 +49,7 @@ Vue.prototype.$message = Message;
 Vue.config.productionTip = false
 
 new Vue({
+  store,
   router,
   render: h => h(App),
 }).$mount('#app')
