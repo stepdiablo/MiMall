@@ -12,18 +12,19 @@ export default {
   mounted() {
     this.getUser();
     this.getCartCount();
-  },  
-  methods:{
+  },
+  methods: {
+    // 给res增加默认值，因为没有登录时，res会=undefined，会报错。
     getUser() {
-      this.axios.get("/user").then((res) => {
-        this.$store.dispatch('saveUserName', res.username);
+      this.axios.get("/user").then((res = {}) => {
+        this.$store.dispatch("saveUserName", res.username);
       });
     },
     getCartCount() {
-      this.axios.get("/carts/products/sum").then((res)=> {   
-         this.$store.dispatch('saveCartCount', res);    
-      })
-    }     
+      this.axios.get("/carts/products/sum").then((res = 0) => {
+        this.$store.dispatch("saveCartCount", res);
+      });
+    }
   }
 };
 </script>
