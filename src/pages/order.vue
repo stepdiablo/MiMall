@@ -1,6 +1,10 @@
 <template>
   <div>
-    <order-header></order-header>
+    <order-header title="我的订单">
+      <template v-slot:tip>
+        <span>温馨提示，以最终交易为准</span>  
+      </template>
+    </order-header>
     <router-view></router-view>
     <nav-footer></nav-footer>
   </div>

@@ -7,7 +7,7 @@ import VueLazyLoader from "vue-lazyload"
 import VueCookie from "vue-cookie"
 import App from './App.vue'
 import { Message } from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
+import 'element-ui/lib/ -chalk/index.css'
 
 
 //根据前端的跨域方案做调整 /a/b : /api/a/b => /a/b
@@ -45,6 +45,7 @@ Vue.use(VueCookie);
 Vue.use(VueLazyLoader, {
   loading: '/imgs/loading-svg/loading-bars.svg'
 })
+// 加入到vue的原型链中，注入Message，当做插件使用。
 Vue.prototype.$message = Message;
 Vue.config.productionTip = false
 
