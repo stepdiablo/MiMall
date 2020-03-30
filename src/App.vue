@@ -10,8 +10,10 @@ export default {
   name: "App",
   components: {},
   mounted() {
-    this.getUser();
-    this.getCartCount();
+    if (this.$cookie.get('userId')){
+      this.getUser();
+      this.getCartCount();
+    }
   },
   methods: {
     // 给res增加默认值，因为没有登录时，res会=undefined，会报错。

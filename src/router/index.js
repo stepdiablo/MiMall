@@ -53,16 +53,16 @@ export default new Router({
             path: "/order",
             name: "order",
             component: Order,
-            children: [
-                {
-                    path: "/comfirm",
-                    name: "order-confirm",
-                    component: OrderConfirm
-                },
+            children: [                
                 {
                     path: "list",
                     name: "order-list",
                     component: OrderList
+                },
+                {
+                    path: "confirm",
+                    name: "order-confirm",
+                    component: OrderConfirm
                 },
                 {
                     path: "pay",

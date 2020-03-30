@@ -7,7 +7,8 @@ import VueLazyLoader from "vue-lazyload"
 import VueCookie from "vue-cookie"
 import App from './App.vue'
 import { Message } from 'element-ui'
-import 'element-ui/lib/ -chalk/index.css'
+// import 'element-ui/lib/ -chalk/index.css'
+import 'element-ui/lib/theme-chalk/index.css'
 
 
 //根据前端的跨域方案做调整 /a/b : /api/a/b => /a/b

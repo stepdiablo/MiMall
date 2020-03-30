@@ -7,7 +7,7 @@
             <span>{{title}}</span>
             <a href="javascript:;" class="icon-close" @click="$emit('cancel')"></a>
           </div>
-          <div class="modal-body">
+          <div class="modal-body">            
             <slot name="body"></slot>
           </div>
           <div class="modal-footer">             
